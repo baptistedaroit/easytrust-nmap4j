@@ -1,7 +1,37 @@
-bin
+#######################################
+# GIT specifics
+# Merge artifacts
+*.orig
+
+#######################################
+# IntelliJ IDEA
+.idea
+out/
+.iml
+
+#######################################
+# Eclipse
+.settings
+.metadata
+.classpath
+bin/
+
+#######################################
+# Maven 
+target
+
+#######################################
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+#######################################
+# Miscellaneous files and directories
+*.tmp
+*.bak
+*.swp
+*.jws
 build
 dist
-javadocs
-.settings
-target
-*.class
