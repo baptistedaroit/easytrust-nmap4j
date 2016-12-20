@@ -1,6 +1,7 @@
 package org.nmap4j;
 
 import static org.junit.Assert.fail;
+import static test.constants.IConstants.NMAP_PATH;
 
 import org.junit.Test;
 import org.nmap4j.core.nmap.NMapExecutionException;
@@ -14,7 +15,7 @@ public class Nmap4jTest {
 	public void basicNmap4jUsageTest() {
 		
 		try {
-			String path = "/usr/local" ;
+			String path = NMAP_PATH ;
 			
 			Nmap4j nmap4j = new Nmap4j( path ) ;
 			nmap4j.addFlags( "-sV -T5 -O -oX -" ) ;

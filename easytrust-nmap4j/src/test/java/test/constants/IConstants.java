@@ -4,4 +4,6 @@ public interface IConstants {
 	
 	public final static String XML_FILE = "nmap-xml/enchantedgrounds-08272010-2140.xml" ;
 
+	public final static String NMAP_PATH = "/EasyTrust/apps/nmap" ;
+
 }

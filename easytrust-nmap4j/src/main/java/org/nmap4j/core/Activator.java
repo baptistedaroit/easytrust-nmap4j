@@ -13,6 +13,8 @@ import org.nmap4j.Nmap4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static org.nmap4j.constants.IConstants.NMAP_PATH;
+
 
 /**
  * Created by stephanericci on 20/12/2016.
@@ -32,7 +34,7 @@ public class Activator extends BaseActivator {
         super.doStart();
 
         // TODO : dirty just for testing !!!
-        nmap4j = new Nmap4j("/usr/local/bin/");
+        nmap4j = new Nmap4j(NMAP_PATH);
         register(Nmap4j.class, nmap4j);
     }
 

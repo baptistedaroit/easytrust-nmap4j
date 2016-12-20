@@ -1,6 +1,7 @@
 package org.nmap4j.core.nmap;
 
 import static org.junit.Assert.fail;
+import static test.constants.IConstants.NMAP_PATH;
 
 import org.junit.After;
 import org.junit.Before;
@@ -86,7 +87,7 @@ public class NMapExecutorTest {
 	@Test
 	public void testExecuteMethodWithoutSudo() {
 		
-		nmapProps.setPath( "/usr/local" ) ;
+		nmapProps.setPath( NMAP_PATH ) ;
 
 		nmapArgs.addFlag( Flag.AGGRESIVE_TIMING ) ;
 		nmapArgs.addFlag( Flag.VERSION ) ;

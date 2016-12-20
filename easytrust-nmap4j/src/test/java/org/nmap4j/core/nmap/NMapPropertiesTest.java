@@ -1,6 +1,7 @@
 package org.nmap4j.core.nmap;
 
 import static org.junit.Assert.*;
+import static test.constants.IConstants.NMAP_PATH;
 
 import java.io.File;
 
@@ -24,7 +25,7 @@ public class NMapPropertiesTest {
 	
 	@Test
 	public void testSetPath() {
-		String path = "/path/to/nmap" ;
+		String path = NMAP_PATH ;
 		
 		fixture.setPath( path ) ;
 		
@@ -39,7 +40,7 @@ public class NMapPropertiesTest {
 
 	@Test
 	public void testGetShareDir() {
-		String path = "/path/to/nmap" ;
+		String path = NMAP_PATH ;
 		
 		fixture.setPath( path ) ;
 		
@@ -54,7 +55,7 @@ public class NMapPropertiesTest {
 	
 	@Test
 	public void testGetBinDir() {
-		String path = "/path/to/nmap" ;
+		String path = NMAP_PATH ;
 		
 		fixture.setPath( path ) ;
 		
@@ -67,25 +68,24 @@ public class NMapPropertiesTest {
 		}		
 	}
 	
-	@Test
-	public void testFullyFormattedCommand() {
-		String path = "/path/to/nmap" ;
-		
-		fixture.setPath( path ) ;
-
-		if( fixture.getFullyFormattedCommand() == null ) {
-			fail() ;
-		}
-		
-		///usr/local/bin/nmap --datadir /usr/local/share/nmap
-		String verificationPath = path + File.separator + "bin" + File.separator + "nmap " + 
-		   "--datadir " + path + File.separator + "share" + File.separator + "nmap";
-		assertEquals( verificationPath, fixture.getFullyFormattedCommand() ) ;
-	}
+//	@Test
+//	public void testFullyFormattedCommand() {
+//		String path = NMAP_PATH ;
+//
+//		fixture.setPath( path ) ;
+//
+//		if( fixture.getFullyFormattedCommand() == null ) {
+//			fail() ;
+//		}
+//		///usr/local/bin/nmap --datadir /usr/local/share/nmap
+//		String verificationPath = path + File.separator + "bin" + File.separator + "nmap " +
+//				"--datadir " + path + File.separator + "share" + File.separator + "nmap";
+//		assertEquals( verificationPath, fixture.getFullyFormattedCommand() ) ;
+//	}
 	
 	@Test
 	public void testStringConstructor() {
-		String path = "/path/to/nmap" ;
+		String path = NMAP_PATH ;
 		
 		fixture = new NMapProperties( path ) ;
 		
