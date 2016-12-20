@@ -29,26 +29,11 @@ try
 				stage 'Checking-out easytrust-nmap4j'
 				echo "Selected Node ${selectedNode}"
 				checkout scm
-
+				
 				// Test nmap
-				stage 'Testing nmap4j'
-				echo "Testing nmap4j on ${selectedNode}"
-				nmap -sV -O -oX easytrustdev2.xml -p 0-60000 149.202.69.119
-
-				// Build Easytrust Server project
-//				stage "Building easytrust-nmap4j and deploying to Artifactory Snapshot repo"
-//				echo "PATH= ${PWD}/.repository"
-//				sh 'rm -Rf ${PWD}/.repository'
-//
-//				stage "Build & deploy to artifactory"
-//				if (selectedNode == "easytrustdev1")
-//				{
-//					sh 'mvn -V -B -s settings.xml clean deploy -Ppreprod -Dmaven.repo.local=${PWD}/.repository'
-//				}
-//				else
-//				{
-//					sh 'mvn -V -B -s settings.xml clean deploy -Pinteg -Dmaven.repo.local=${PWD}/.repository'
-//				}
+				stage 'Building nmap4j'
+				echo "Building nmap4j on ${selectedNode}"
+				sh 'mvn clean install'
 			}
 		}
 	}
